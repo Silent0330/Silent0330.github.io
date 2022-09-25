@@ -16,34 +16,39 @@ var key = '';
 
 liff.init({
     'liffId':  '1657500811-r2lOxyne',
-}).then(function(response) {
+}).then(function() {
     // 這邊開始寫使用其他功能
-    console.log(response);
-    line_uid = response.context.userId;
-    let data = {
-        'action': 'get_key',
-        'line_uid': line_uid
-    };
-    fetch('https://script.google.com/macros/s/AKfycbyhphd70WeEC5jiogYx-BtihI6fPnHpuRhXXjRp21y-qpe3ea8-ul5i6uvNjl33JQpF/exec', 
-        {
-            body: JSON.stringify(data),
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            credentials: 'omit', // include, same-origin, *omit
-            headers: {
-                'user-agent': 'scanner',
-                'content-type': 'application/json'
-            },
-            mode: 'same-origin', // no-cors, cors, *same-origin
-            redirect: 'follow', // manual, *follow, error
-            referrer: 'client', // *client, no-referrer
-        }
-    ).then((response) => {
-        console.log(response);
-        initial = true;
-    }).then(result => {
-        console.log(result);
-    }).catch((err) => {
-        console.log('錯誤:', err);
+    liff.getProfile()
+    .then(profile => {
+        line_uid = profile.userId;
+        let data = {
+            'action': 'get_key',
+            'line_uid': line_uid
+        };
+        fetch('https://script.google.com/macros/s/AKfycbyhphd70WeEC5jiogYx-BtihI6fPnHpuRhXXjRp21y-qpe3ea8-ul5i6uvNjl33JQpF/exec', 
+            {
+                body: JSON.stringify(data),
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                credentials: 'omit', // include, same-origin, *omit
+                headers: {
+                    'user-agent': 'scanner',
+                    'content-type': 'application/json'
+                },
+                mode: 'same-origin', // no-cors, cors, *same-origin
+                redirect: 'follow', // manual, *follow, error
+                referrer: 'client', // *client, no-referrer
+            }
+        ).then((response) => {
+            console.log(response);
+            initial = true;
+        }).then(result => {
+            console.log(result);
+        }).catch((err) => {
+            console.log('錯誤:', err);
+        });
+    })
+    .catch((err) => {
+        console.log('error', err);
     });
     
 }).catch(function(err) {
