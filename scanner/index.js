@@ -39,20 +39,19 @@ liff.init({
                 referrer: 'client', // *client, no-referrer
             }
         ).then((response) => {
-            console.log(response);
+            alert(`respnse: ${response}`);
             initial = true;
         }).then(result => {
-            console.log(result);
+            alert(`result: ${result}`);
         }).catch((err) => {
-            console.log('錯誤:', err);
+            alert(`get_key err: ${err}`);
         });
     })
     .catch((err) => {
-        console.log('error', err);
+        alert(`profile err: ${err}`);
     });
     
 }).catch(function(err) {
-    console.log(`init err: ${err}`);
     alert(`init err: ${err}`);
 });
 
