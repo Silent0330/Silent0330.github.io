@@ -46,7 +46,7 @@ liff.init({
         console.log('錯誤:', err);
     });
     
-}).catch(function(error) {
+}).catch(function(err) {
     console.log(`init err: ${err}`);
     alert(`init err: ${err}`);
 });
