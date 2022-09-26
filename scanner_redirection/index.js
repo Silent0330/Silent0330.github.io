@@ -15,7 +15,7 @@ liff.init({
         };
         let form = document.createElement('form');
         form.method = 'post';
-        form.action = 'https://script.google.com/macros/s/AKfycbxLihItSgykMBrLdfX6mQvc4HL5lTD0eVY1aBRgYj1XGbKejuIK5zK40K_Aiz9sQI3z/exec';
+        form.action = 'https://script.google.com/macros/s/AKfycbxQzBM2wllS7QhohkkPnmdJnNq4xnvScon1uNkC4r24jLYYDvljPzBKyM9cL5ktHKLP/exec';
         document.body.appendChild(form);
 
         for (const key in data) {
