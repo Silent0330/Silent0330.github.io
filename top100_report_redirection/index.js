@@ -10,7 +10,7 @@ liff.init({
         let displayName = profile.displayName;
         let pictureUrl = profile.pictureUrl;
         let data = {
-            'action': '自助報到',
+            'action': '人數回報頁面',
             'line_group_uid': line_group_uid,
             'line_uid': line_uid,
             'displayName': displayName,
