@@ -13,8 +13,8 @@ liff.init({
             'action': '人數回報頁面',
             'line_group_uid': line_group_uid,
             'line_uid': line_uid,
-            'displayName': displayName,
-            'pictureUrl': pictureUrl
+            'line_displayName': displayName,
+            'line_pictureUrl': pictureUrl
         };
         let form = document.createElement('form');
         form.method = 'post';

@@ -10,8 +10,8 @@ liff.init({
         let data = {
             'action': '自助報到',
             'line_uid': line_uid,
-            'displayName': displayName,
-            'pictureUrl': pictureUrl
+            'line_displayName': displayName,
+            'line_pictureUrl': pictureUrl
         };
         let form = document.createElement('form');
         form.method = 'post';
