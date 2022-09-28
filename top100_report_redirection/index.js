@@ -34,7 +34,7 @@ liff.init({
     .catch((err) => {
         alert(`profile err: ${err}`);
     });
-    
+   
 }).catch(function(err) {
     alert(`init err: ${err}`);
 });
