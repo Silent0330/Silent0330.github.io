@@ -1,4 +1,4 @@
-liff.init({
+liff.init({ 
     'liffId':  '1657500742-LzQ6REdP',
 }).then(function() {
     // 這邊開始寫使用其他功能
