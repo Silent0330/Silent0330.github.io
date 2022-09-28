@@ -5,6 +5,7 @@ liff.init({
     liff.getProfile()
     .then(profile => {
         const context = liff.getContext();
+        console.log(context);
         if (liff.isLoggedIn()){
             liff.login();
         }
