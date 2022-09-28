@@ -18,7 +18,7 @@ liff.init({
         };
         let form = document.createElement('form');
         form.method = 'post';
-        form.action = 'https://script.google.com/macros/s/AKfycbyJPFv71ZEcISIx7rgRvF2A50EQ2BgC9dFu4H4EYu_1Z7tq1YemJcU538T2Tv_SqWJkuw/exec';
+        form.action = 'https://script.google.com/macros/s/AKfycbw5T06QbcTXW4NBap3p24b9hwCPOlUonsSVM_4rtWvUlyWTCGhH0NkuuM4OPWLhGygtUg/exec';
         document.body.appendChild(form);
 
         for (const key in data) {
@@ -34,7 +34,7 @@ liff.init({
     .catch((err) => {
         alert(`profile err: ${err}`);
     });
-   
+    
 }).catch(function(err) {
     alert(`init err: ${err}`);
 });
