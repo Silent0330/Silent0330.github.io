@@ -4,7 +4,7 @@ liff.init({
     // 這邊開始寫使用其他功能
     const context = liff.getContext();
     console.log(context);
-    if (liff.isLoggedIn()){
+    if (!liff.isLoggedIn()){
         liff.login();
     }
     else {
@@ -21,6 +21,7 @@ liff.init({
                 'line_displayName': displayName,
                 'line_pictureUrl': pictureUrl
             };
+            console.log(data);
             let form = document.createElement('form');
             form.method = 'post';
             form.action = 'https://script.google.com/macros/s/AKfycbyL1V4sjC7kvBdbUBjxSFE4jDRCCBI69Nx-efkFa2zvju4yY4_n1Q7kiRvVbVD_oXgCtg/exec';
