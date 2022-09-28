@@ -4,7 +4,7 @@ liff.init({
     // 這邊開始寫使用其他功能
     const context = liff.getContext();
     console.log(context);
-    if (liff.isLoggedIn()){
+    if (!liff.isLoggedIn()){
         liff.login();
     }
     else {
