@@ -1,15 +1,15 @@
-liff.init({ 
+liff.init({
     'liffId':  '1657500742-LzQ6REdP',
 }).then(function() {
     // 這邊開始寫使用其他功能
-    liff.getProfile()
-    .then(profile => {
-        const context = liff.getContext();
-        console.log(context);
-        if (liff.isLoggedIn()){
-            liff.login();
-        }
-        else {
+    const context = liff.getContext();
+    console.log(context);
+    if (liff.isLoggedIn()){
+        liff.login();
+    }
+    else {
+        liff.getProfile()
+        .then(profile => {
             let line_group_uid = context.groupId;
             let line_uid = profile.userId;
             let displayName = profile.displayName;
@@ -35,11 +35,11 @@ liff.init({
                 form.appendChild(formField);
             }
             form.submit();
-        }
-    })
-    .catch((err) => {
-        alert(`profile err: ${err}`);
-    });
+        })
+        .catch((err) => {
+            alert(`profile err: ${err}`);
+        });
+    }
     
 }).catch(function(err) {
     alert(`init err: ${err}`);
