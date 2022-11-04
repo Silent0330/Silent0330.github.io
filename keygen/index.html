@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <base target="_top">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
+    <title>KeyGen</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+  </head>
+
+  <body>
+		<label>message:
+		  <input type="password" id="message">
+		</label>
+		<label>key:
+		  <input type="password" id="key">
+		</label>
+		<input type="button" value="生成" onclick="gen_key();">
+		<br>
+		<label>target_key:
+		  <input style="width:10px;" type="password" id="target_key">
+		</label>
+		<input type="button" class="copy" value="複製" onclick="copy_target_key();">
+		<label>cut:
+		  <input type="text" id="cut">
+		</label>
+		<input type="button" value="切割" onclick="cut_key();">
+		<br>
+		<label>cut_key:
+		  <input style="width:10px;" type="password" id="cut_key">
+		</label>
+		<input type="button" class="copy" value="複製" onclick="copy_cut_key();">
+		<input type="button" value="大寫" onclick="upper();">
+		<input type="button" value="小寫" onclick="lower();">
+		<input type="button" id="btn_view" value="view" onclick="view();">
+
+    </body>
+
+</html>
