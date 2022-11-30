@@ -5,12 +5,12 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexming.css);
 h1{
     font-family: 'cwTeXKai', 'cwTeXYen', 'cwTeXFangSong', 'Noto Sans TC', 'cwTeXMing', sans-serif !important;
-    font-size: 50px;
+    font-size: 10vmin;
     font-weight: 800
 }
 input{
     font-family: 'cwTeXFangSong', 'cwTeXKai', 'cwTeXYen', 'Noto Sans TC', 'cwTeXMing', sans-serif !important;
-    font-size: 30px;
+    font-size: 5vmin;
     font-weight: 400
 }
 
@@ -22,8 +22,8 @@ input{
     -o-background-size: 100% 100%;
 }
 #svg-arrow-down{
-    width: 50px;
-    height: 50px;
+    width: 5vmin;
+    height: 5vmin;
     color: red;
 }
 @-webkit-keyframes drop {
@@ -61,6 +61,18 @@ input{
     border-radius: 10px;
 }
 .btn-main:hover{
+    color: white;
+    background-color:#29d8ff;
+    border-width: 0px;
+    border-radius: 10px;
+}
+.btn-main:active{
+    color: white;
+    background-color:#29d8ff;
+    border-width: 0px;
+    border-radius: 10px;
+}
+.btn-main:focus{
     color: white;
     background-color:#29d8ff;
     border-width: 0px;
