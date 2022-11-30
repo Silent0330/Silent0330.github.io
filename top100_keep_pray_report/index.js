@@ -3,21 +3,26 @@ const url = 'https://script.google.com/macros/s/AKfycbzZW8afjff5hmdSU3gknLNUYIwQ
 
 document.addEventListener('DOMContentLoaded', init);
 
+var intervalId = window.setInterval(updateNumber, 10000);
+
 function init() {
-    console.log('ready');
+    updateNumber();
+}
+
+
+function updateNumber() {
+    console.log('fetching...')
     fetch(url)
     .then((res)=>{
         return res.json();
     })
     .then((content)=>{
-        updateNumber(content);
+        if(content.success) {
+            console.log('success')
+            label_number.innerText = content.data.num;
+        }
+        else {
+            console.log('fail')
+        }
     })
-}
-
-
-function updateNumber(content) {
-    console.log(content);
-    if(content.success) {
-        label_number.innerText = content.data.num;
-    }
 }
