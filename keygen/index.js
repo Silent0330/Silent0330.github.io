@@ -115,7 +115,7 @@ var cut_key = document.getElementById("cut_key");
     }
     else {
         target_key.type = "password";
-        cut_key.type = "text";
+        cut_key.type = "password";
         btn_view.value = "view";
     }
 }
