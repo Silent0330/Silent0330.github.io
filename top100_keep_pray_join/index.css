@@ -19,12 +19,18 @@ input{
     background-size: 100% 100%;
     -webkit-background-size: 100% 100%;
     -moz-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
     -o-background-size: 100% 100%;
 }
 .svg-index-down{
     width: 5vmin;
     height: 5vmin;
     color: red;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
 }
 @-webkit-keyframes drop {
     0%   { top:0px;  opacity: 0;}
