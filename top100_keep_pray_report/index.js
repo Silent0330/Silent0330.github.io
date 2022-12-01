@@ -1,5 +1,5 @@
 const label_number = document.getElementById('label_number');
-const url = 'https://script.google.com/macros/s/AKfycbzZW8afjff5hmdSU3gknLNUYIwQJCM36OpXAsR724ZmnhzDw_nnrBww60goP7QJSg3v/exec?action=取得人數';
+const url = 'https://script.google.com/macros/s/AKfycbwM5ezO7BL-_8WZFQx-xTQbBG83NvCYqwyurIoZAkaJW0dczu8bnZtuzKlWFuBgnEAg/exec?action=取得人數';
 
 document.addEventListener('DOMContentLoaded', init);
 
