@@ -25,6 +25,7 @@ liff.init({
         })
         .catch((err) => {
             liff.logout();
+            location.reload();
             alert(`profile err: ${err}`);
         });
     }
