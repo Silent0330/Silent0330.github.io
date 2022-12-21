@@ -24,6 +24,7 @@ liff.init({
             div_container.innerHTML=`<img class="img_card" src="img/2023新年經文${value}.jpg">`
         })
         .catch((err) => {
+            liff.logout();
             alert(`profile err: ${err}`);
         });
     }
