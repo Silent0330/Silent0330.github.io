@@ -84,7 +84,7 @@ liff.init({
             console.log(data);
             let form = document.createElement('form');
             form.method = 'post';
-            form.action = 'https://script.google.com/macros/s/AKfycbw0O1vB7Qn0o0x7nFEmALwBZoZ4MtPmsTUbf6dHQLaRIYxuG91h-qfbibSFAP_wIsjEbQ/exec';
+            form.action = 'https://140.113.216.86/scriptures_card/2023';
             document.body.appendChild(form);
     
             for (const key in data) {
