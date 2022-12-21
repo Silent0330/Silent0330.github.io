@@ -15,11 +15,13 @@ liff.init({
                 'line_uid': line_uid,
                 'line_displayName': displayName
             };
+            var hash = CryptoJS.HmacSHA256(line_uid, '2023');
+            hash = hash.toString(CryptoJS.enc.Hex);
             let value = 0;
-            for(let i = 0; i < line_uid.length; i++) {
-              value += line_uid.charCodeAt(i);
+            for(let i = 0; i < hash.length; i++) {
+              value += hash.charCodeAt(i);
             }
-            value = ((value+2023)%223)+1
+            value = (value%223)+1
             let div_container = document.getElementById('div_container');
             div_container.innerHTML=`<img class="img_card" src="img/2023新年經文${value}.jpg">`
         })
