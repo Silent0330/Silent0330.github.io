@@ -2,8 +2,6 @@ liff.init({
     'liffId':  '1657754998-0PAZxgke',
 }).then(function() {
     // 這邊開始寫使用其他功能
-    const context = liff.getContext();
-    console.log(context);
     if (!liff.isLoggedIn()){
         liff.login();
     }
