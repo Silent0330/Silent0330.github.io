@@ -1,55 +1,24 @@
-body {
-    margin:0px;
-    padding:0px;
-    width: 100%;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexkai.css');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexyen.css');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css');
+@import url('https://fonts.googleapis.com/earlyaccess/notosanstc.css');
+@import url('https://fonts.googleapis.com/earlyaccess/cwtexming.css');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+.main-container{
     background-color: black;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+}
+#div_header{
+    margin-bottom: 10vmin;
 }
 
-#div_content{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-#div_container{
-	height: 100%;
-    overflow: hidden;
-}
-
-.img_card {
-    max-height: 100%;
-}
-
-/* hide back of pane during swap */
-#div_card_01, #div_card_02, #div_card_03, #div_card_04 {
-	transition: 1s;
-	transform-style: preserve-3d;
-
-	position: relative;
-
-	backface-visibility: hidden;
-
-	height: 100%;
-}
-
-#div_card_01 {
-	z-index: 4;
-	transform:translateY(0%);
-}
-
-#div_card_02 {
-	z-index: 3;
-	transform:translateY(-100%);
-}
-
-#div_card_03 {
-	z-index: 2;
-	transform:translateY(-200%);
-}
-
-#div_card_04 {
-	z-index: 1;
-	transform:translateY(-300%);
+h1{
+    font-family: 'Helvetica', 'cwTeXKai', 'cwTeXYen', 'cwTeXFangSong', 'Noto Sans TC', 'cwTeXMing', sans-serif !important;
+	color: white;
+    font-size: 10vmin;
+    font-weight: 800
 }
