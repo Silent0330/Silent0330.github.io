@@ -23,11 +23,7 @@ liff.init({
             }
             value = ((value+2023)%223)+1
             let div_container = document.getElementById('div_container');
-            let img = document.createElement('img');
-            img.classList.add('img_card');
-            img.src = `img/2023新年經文${value}.jpg`;
-            img.alt = '經文卡'
-            div_container.appendChild(img);
+            div_container.innerHTML=`<img class="img_card" src="img/2023新年經文${value}.jpg">`
         })
         .catch((err) => {
             alert(`profile err: ${err}`);
