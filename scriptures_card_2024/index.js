@@ -15,7 +15,7 @@ liff.init({
                 'line_uid': line_uid,
                 'line_displayName': displayName
             };
-            var hash = CryptoJS.HmacSHA256(line_uid, '20240101');
+            var hash = CryptoJS.HmacSHA256(line_uid, '20231231');
             hash = hash.toString(CryptoJS.enc.Hex);
             let value = 0;
             for(let i = 0; i < hash.length; i++) {
