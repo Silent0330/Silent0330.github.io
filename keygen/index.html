@@ -1,41 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 
-  <head>
-    <base target="_top">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
     <title>KeyGen</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
+</head>
 
-  <body>
-		<label>message:
-		  <input type="password" id="message">
-		</label>
-		<label>key:
-		  <input type="password" id="key">
-		</label>
-		<input type="button" value="生成" onclick="gen_key();">
-		<br>
-		<label>target_key:
-		  <input type="password" id="target_key">
-		</label>
-		<input type="button" class="copy" value="複製" onclick="copy_target_key();">
-		<label>cut:
-		  <input type="text" id="cut">
-		</label>
-		<input type="button" value="切割" onclick="cut_key();">
-		<br>
-		<label>cut_key:
-		  <input type="password" id="cut_key">
-		</label>
-		<input type="button" class="copy" value="複製" onclick="copy_cut_key();">
-		<input type="button" value="大寫" onclick="upper();">
-		<input type="button" value="小寫" onclick="lower();">
-		<input type="button" id="btn_view" value="view" onclick="view();">
-    
+<body>
+    <div class="keygen-container">
+        <!-- 輸入區 -->
+        <section class="keygen-section" id="input-section">
+            <h2 class="section-title">輸入</h2>
+            <div class="row">
+                <div class="col">
+                    <label class="input-label" for="input_message">message:</label>
+                    <input type="password" id="input_message">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="input-label" for="input_key">key:</label>
+                    <input type="password" id="input_key">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="right">
+                        <input type="button" class="action-btn" value="生成" onclick="gen_key();">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 結果區 -->
+        <section class="keygen-section" id="result-section">
+            <h2 class="section-title">結果</h2>
+            <div class="row">
+                <div class="col">
+                    <label class="input-label" for="generated_key">generated_key:</label>
+                    <input type="password" id="generated_key">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="input-label">
+                        <input type="checkbox" id="check_cut"> Cut
+                        <input type="text" id="input_cut">
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label class="input-label">
+                        <input type="checkbox" id="check_uppercase"> 大寫
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="right">
+                        <input type="button" class="action-btn" id="btn_copy_result" value="複製" onclick="copy_result();">
+                        <input type="button" class="action-btn" id="btn_view" value="顯示" onclick="view();">
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </div>
+
     <script type="text/javascript" src="index.js"></script>
-
-    </body>
+</body>
 
 </html>

@@ -1,19 +1,17 @@
 
 const board = navigator.clipboard;
 
-function gen_key(){
-var message= document.getElementById("message");
-var key = document.getElementById("key");
-var target_key = document.getElementById("target_key");
-if (message.value=="") return;
-if (key.value=="") return;
-var hash = CryptoJS.HmacSHA256(message.value, key.value);
-hash = hash.toString(CryptoJS.enc.Hex);
-    console.log(hash);
+function gen_key() {
+    const input_message = document.getElementById("input_message");
+    const input_key = document.getElementById("input_key");
+    const generated_key = document.getElementById("generated_key");
+    if (input_message.value == "") return;
+    if (input_key.value == "") return;
+    var hash = CryptoJS.HmacSHA256(input_message.value, key.value);
+    hash = hash.toString(CryptoJS.enc.Hex);
 
-var target = "";
-for (let i = 0; i < hash.length; i += 2)
-{
+    var target = "";
+    for (let i = 0; i < hash.length; i += 2) {
         let num = (hash.charCodeAt(i) + hash.charCodeAt(i + 1));
         if (i == 0) {
             num = num % 26;
@@ -26,96 +24,45 @@ for (let i = 0; i < hash.length; i += 2)
         }
         else {
             num = num % 36;
-            if (num < 26)
-            {
+            if (num < 26) {
                 let ch = num + 'a'.charCodeAt(0);
                 target += String.fromCharCode(ch);
             }
-            else
-            {
+            else {
                 target += (num - 26).toString();
             }
         }
-}
-target_key.value = target;
-}
-
-function cut_key(){
-var cut= document.getElementById("cut");
-var target_key = document.getElementById("target_key");
-var cut_key = document.getElementById("cut_key");
-if (cut.value=="") return;
-if (target_key.value=="") return;
-
-cut_key.value = target_key.value.substring(0, parseInt(cut.value));
-}
-
-function isLetter(char){
-    return ( (char >= 'A' &&  char <= 'Z') ||
-            (char >= 'a' &&  char <= 'z') );
-}
-
-
-function upper(){
-var target_key = document.getElementById("target_key");
-var cut_key = document.getElementById("cut_key");
-if (target_key=="") return;
-var index = 0;
-for (let i = 0; i < target_key.value.length; i++) {
-    if (isLetter(target_key.value[i])) {
-        index = i;
-        break;
     }
-}
-if (index == target_key.value.length) return;
-target_key.value = target_key.value.substring(0, index) + target_key.value[index].toUpperCase() + target_key.value.substring(index+1);
-if (cut_key.value=="") return;
-cut_key.value = cut_key.value.substring(0, index) + cut_key.value[index].toUpperCase() + cut_key.value.substring(index+1);
-
+    generated_key.value = target;
 }
 
-function lower(){
-var target_key = document.getElementById("target_key");
-var cut_key = document.getElementById("cut_key");
-if (index == target_key.value.length) return;
-var index = 0;
-for (let i = 0; i < target_key.value.length; i++) {
-    if (isLetter(target_key.value[i])) {
-        index = i;
-        break;
+function copy_generated_key() {
+    const isUppercase = document.getElementById('uppercase').checked;
+    const isCut = document.getElementById('cut_option').checked;
+
+    let result = document.getElementById('generated_key').value;
+  
+    if (isUppercase) {
+        result = result.substring(0, index) + result[index].toUpperCase() + result.substring(index + 1);
     }
-}
-if (index == target_key.value.length) return;
-target_key.value = target_key.value.substring(0, index) + target_key.value[index].toLowerCase() + target_key.value.substring(index+1);
-if (cut_key.value=="") return;
-cut_key.value = cut_key.value.substring(0, index) + cut_key.value[index].toLowerCase() + cut_key.value.substring(index+1);
 
-}
+    if (isCut) {
+      const cutValue = document.getElementById('input_cut').value;
+      result = result.substring(0, cutValue.length);
+    }
 
-function copy_target_key(){
-var target_key = document.getElementById("target_key");
-    navigator.clipboard.writeText(target_key.value)
+    navigator.clipboard.writeText(result)
 }
 
-function copy_cut_key(){
-var cut_key = document.getElementById("cut_key");
-    navigator.clipboard.writeText(cut_key.value)
-}
-
-function view(){
-var btn_view = document.getElementById("btn_view");
-var message = document.getElementById("message");
-var key = document.getElementById("key");
-var target_key = document.getElementById("target_key");
-var cut_key = document.getElementById("cut_key");
-    if (btn_view.value == "view") {
-        target_key.type = "text";
-        cut_key.type = "text";
-        btn_view.value = "hide";
+function view() {
+    var btn_view = document.getElementById("btn_view");
+    var generated_key = document.getElementById("generated_key");
+    if (btn_view.value == "顯示") {
+        generated_key.type = "text";
+        btn_view.value = "隱藏";
     }
     else {
-        target_key.type = "password";
-        cut_key.type = "password";
-        btn_view.value = "view";
+        generated_key.type = "password";
+        btn_view.value = "顯示";
     }
 }
