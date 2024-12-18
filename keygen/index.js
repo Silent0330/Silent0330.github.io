@@ -7,7 +7,7 @@ function gen_key() {
     const generated_key = document.getElementById("generated_key");
     if (input_message.value == "") return;
     if (input_key.value == "") return;
-    var hash = CryptoJS.HmacSHA256(input_message.value, key.value);
+    var hash = CryptoJS.HmacSHA256(input_message.value, input_key.value);
     hash = hash.toString(CryptoJS.enc.Hex);
 
     var target = "";
@@ -36,19 +36,19 @@ function gen_key() {
     generated_key.value = target;
 }
 
-function copy_generated_key() {
-    const isUppercase = document.getElementById('uppercase').checked;
-    const isCut = document.getElementById('cut_option').checked;
+function copy_result() {
+    const isUppercase = document.getElementById('check_uppercase').checked;
+    const isCut = document.getElementById('check_cut').checked;
 
     let result = document.getElementById('generated_key').value;
   
     if (isUppercase) {
-        result = result.substring(0, index) + result[index].toUpperCase() + result.substring(index + 1);
+        result = result[0].toUpperCase() + result.substring(1);
     }
 
     if (isCut) {
       const cutValue = document.getElementById('input_cut').value;
-      result = result.substring(0, cutValue.length);
+      result = result.substring(0, cutValue);
     }
 
     navigator.clipboard.writeText(result)
