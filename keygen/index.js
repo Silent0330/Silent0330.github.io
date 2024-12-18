@@ -38,12 +38,17 @@ function gen_key() {
 
 function copy_result() {
     const isUppercase = document.getElementById('check_uppercase').checked;
+    const isSpecial = document.getElementById('check_special').checked;
     const isCut = document.getElementById('check_cut').checked;
 
     let result = document.getElementById('generated_key').value;
   
     if (isUppercase) {
         result = result[0].toUpperCase() + result.substring(1);
+    }
+    
+    if (isSpecial) {
+        result = "_" + result;
     }
 
     if (isCut) {
